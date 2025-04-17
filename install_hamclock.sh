@@ -57,7 +57,6 @@ export DISPLAY=:99
 # Add Xvfb/DISPLAY to .profile (if not already there)
 grep -q "Xvfb :99 &" ~/.profile || echo "Xvfb :99 &" >> ~/.profile
 grep -q "export DISPLAY=:99" ~/.profile || echo "export DISPLAY=:99" >> ~/.profile
-source ~/.profile
 
 # Open firewall ports
 if command -v ufw >/dev/null 2>&1; then
