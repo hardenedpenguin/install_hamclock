@@ -87,8 +87,10 @@ command -v hamclock >/dev/null 2>&1 || {
     fi
   fi
   chmod +x install-hc-rpi
-  # Update OS version check to include trixie
-  sed -i "s/'bullseye|bookworm'/'bullseye|bookworm|trixie'/g" install-hc-rpi
+  # Update OS version check to include trixie (only if not already supported upstream)
+  if ! grep -q "egrep.*trixie" install-hc-rpi; then
+    sed -i "s/'bullseye|bookworm'/'bullseye|bookworm|trixie'/g" install-hc-rpi
+  fi
   ./install-hc-rpi
   if [ $? -ne 0 ]; then
     echo "Hamclock installation failed."
