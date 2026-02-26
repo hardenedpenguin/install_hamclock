@@ -1,5 +1,7 @@
 # install_hamclock
 
+![GitHub total downloads](https://img.shields.io/github/downloads/hardenedpenguin/install_hamclock/total?style=flat-square)
+
 This script installs **HamClock** on a Debian-based system.
 
 ## 📋 Requirements
